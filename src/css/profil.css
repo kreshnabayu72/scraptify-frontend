@@ -9,7 +9,7 @@
 
 .profilTitle {
   color: #12465b;
-  margin-left: 6vw;
+  margin-left: 7%;
   font-size: 36px;
 }
 
@@ -17,32 +17,34 @@
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: 86vw;
-  height: 46vw;
+  width: 86%;
+  min-height: 600px;
+  height: 100%;
   background-color: white;
   margin-top: 40px;
-  margin-bottom: 15vh;
+  /* margin-bottom: 15%; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .accleft {
-  width: 34vw;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .accleft img {
-  width: 24vw;
-  height: 24vw;
+  height: 50%;
+
+  width: 50%;
   border-radius: 50%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  margin-top: 8vh;
+  margin-top: 20%;
 }
 
 .accleft button {
-  margin-top: 6vh;
+  margin-top: 6%;
   border-radius: 10px;
-  width: 11vw;
-  height: 3vw;
+  width: 11%;
+  height: 3%;
   color: white;
   cursor: pointer;
   font-family: ProductSansBold;
@@ -52,8 +54,9 @@
 }
 
 .accright {
-  width: 44vw;
-  height: 44vw;
+  width: 50%;
+  height: 100%;
+  padding: 2% 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -67,7 +70,7 @@
 }
 
 .profIn input {
-  width: 40vw;
+  width: 80%;
   height: 45px;
   border-radius: 10px;
   background: rgba(196, 196, 196, 0.25);
@@ -80,10 +83,10 @@
 }
 
 .profNama input {
-  width: 18vw;
+  width: 18%;
 }
 .nomorHP {
-  width: 17vw;
+  width: 17%;
   height: 45px;
   border-radius: 10px;
   background-color: #41c452;
@@ -103,18 +106,18 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   margin: auto;
-  width: 86vw;
-  height: 42.66vw;
+  width: 86%;
+  height: 42.66%;
   background-color: white;
   margin-top: 40px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .profBtnSave {
-  position: absolute;
+  /* position: absolute; */
   background-color: #d8574a;
-  margin-left: 540px;
-  margin-top: 820px;
+  margin-top: 20px;
+  margin-left: 70%;
   width: 260px;
   height: 45px;
   border: none;
@@ -146,15 +149,11 @@
 
 @media screen and (max-width: 1400px) {
   .profBtnSave {
-    position: absolute;
-    background-color: #d8574a;
-    margin-left: 450px;
-    margin-top: 780px;
-    width: 260px;
-    height: 45px;
-    border: none;
-    outline: none;
-    border-radius: 25px;
-    cursor: pointer;
+    width: 230px;
+    height: 35px;
+    margin-left: 30%;
+  }
+  .accleft img {
+    height: 30%;
   }
 }

@@ -90,7 +90,7 @@ const Navbar = ({ setSidebarIsOpen }) => {
             <Link to="/profile">User Profile</Link>
           </div>
           <div className="moreMenu">
-            <Link to="#signout" onClick={signoutHandler}>
+            <Link to="/login" onClick={signoutHandler}>
               Sign Out
             </Link>
           </div>

@@ -6,20 +6,6 @@ import Footer from "../component/Footer";
 import { LogoIPB, Trash } from "../component/Logo";
 
 export default function CartScreen(props) {
-  // const productId = props.match.params.id;
-  // const qty = props.location.search
-  //   ? Number(props.location.search.split("=")[1])
-  //   : 1;
-  // const cart = useSelector((state) => state.cart);
-  // const { cartItems1, error } = cart;
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   if (productId) {
-  //     dispatch(addToCart(productId, qty));
-  //   }
-  // }, [dispatch, productId, qty]);
-
   const removeFromCartHandler = (id) => {
     console.log("removed " + id);
   };
@@ -89,7 +75,6 @@ export default function CartScreen(props) {
           </button>
         </div>
       </div>
-      <Footer margin={"375px"} />
     </>
   );
 }

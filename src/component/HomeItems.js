@@ -7,7 +7,11 @@ const HomeItems = ({ data }) => {
           return (
             <Link to={`/product/${item._id}`}>
               <div className="homeItem" key={item._id}>
-                <img src={item.image} alt={item.name} className="itemPic" />
+                <img
+                  src={require(`../images/${item.image}`)}
+                  alt={item.name}
+                  className="itemPic"
+                />
                 <div className="itemDesc">
                   <p>{item.name}</p>
                   <h1>Rp {item.price.toLocaleString()}</h1>

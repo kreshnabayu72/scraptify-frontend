@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -9,13 +9,20 @@ import Items from "../component/HomeItems";
 import { LogoIPB2 } from "../component/Logo";
 
 export default function SearchScreen(props) {
-  const { name = "all", category = "all" } = useParams();
+  const { name = "", category = "all" } = useParams();
   const productList = { products: data.products };
-  const { loading, error, products } = productList;
 
-  // useEffect(() => {}, [category, dispatch, name]);
+  const [filtered, setFiltered] = useState([]);
+  const { products } = productList;
 
-  console.log(products);
+  useEffect(() => {
+    setFiltered(
+      products.filter((product) =>
+        product.name.toLowerCase().includes(name.toLowerCase())
+      )
+    );
+  }, [name]);
+
   return (
     <>
       <Navbar />
@@ -26,7 +33,7 @@ export default function SearchScreen(props) {
             <h1 className="center">Produk tidak ditemukan</h1>
           )}
           <h1 className="searchTitle center">Hasil Pencarian Untuk "{name}"</h1>
-          <Items data={products} />
+          <Items data={filtered} />
         </>
       </div>
       <Footer />

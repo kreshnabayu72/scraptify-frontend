@@ -94,7 +94,6 @@ export default function ProductListScreen(props) {
           </table>
         }
       </div>
-      <Footer margin={"240px"} />
     </>
   );
 }

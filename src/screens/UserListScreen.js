@@ -1,49 +1,41 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUser, listUsers } from "../actions/userActions";
-import LoadingBox from "../components/LoadingBox";
-import MessageBox from "../components/MessageBox";
-import { USER_DETAILS_RESET } from "../constants/userConstants";
-import Navbar from "../other/Navbar";
-import Footer from "../other/Footer";
+
+import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+import { LogoIPB } from "../component/Logo";
 
 export default function UserListScreen(props) {
-  const userList = useSelector((state) => state.userList);
-  const { loading, error, users } = userList;
-  const userDelete = useSelector((state) => state.userDelete);
-  const {
-    loading: loadingDelete,
-    error: errorDelete,
-    success: successDelete,
-  } = userDelete;
+  const users = [
+    {
+      _id: 1,
+      name: "admin",
+      email: "admin@admin.com",
+      isAdmin: true,
+      isSeller: false,
+    },
+  ];
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(listUsers());
-    dispatch({ type: USER_DETAILS_RESET });
-  }, [dispatch, successDelete]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(listUsers());
+  //   dispatch({ type: USER_DETAILS_RESET });
+  // }, [dispatch, successDelete]);
 
   const deleteHandler = (user) => {
     if (window.confirm("Are you sure?")) {
-      dispatch(deleteUser(user._id));
+      console.log("delete");
     }
   };
 
   return (
     <>
+      <LogoIPB />
       <Navbar />
       <div className="listPage">
         <h1 className="ordersTitle">Users</h1>
-        {loadingDelete && <LoadingBox></LoadingBox>}
-        {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
-        {successDelete && (
-          <MessageBox variant="success">User Deleted Successfully</MessageBox>
-        )}
-        {loading ? (
-          <LoadingBox></LoadingBox>
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
+
+        {
           <table className="table">
             <thead>
               <tr>
@@ -85,9 +77,8 @@ export default function UserListScreen(props) {
               ))}
             </tbody>
           </table>
-        )}
+        }
       </div>
-      <Footer margin={"380px"} />
     </>
   );
 }

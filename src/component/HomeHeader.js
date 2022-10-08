@@ -74,26 +74,7 @@ const HeaderCategories = ({
                 }
               }}
             >
-              <div
-                className="catPicDiv"
-                onClick={(e) => {
-                  var kliked;
-                  var catCategory =
-                    e.target.parentElement.parentElement.parentElement;
-
-                  if (catCategory.classList.contains("clicked")) kliked = true;
-                  let arr = Array.from(catCategory.parentElement.childNodes);
-                  arr.map((btn) => {
-                    btn.classList.remove("clicked");
-                  });
-
-                  if (!kliked) {
-                    catCategory.classList.add("clicked");
-                  }
-                }}
-              >
-                {cat.img}
-              </div>
+              <div className="catPicDiv">{cat.img}</div>
               <p>{cat.nama}</p>
             </div>
           );

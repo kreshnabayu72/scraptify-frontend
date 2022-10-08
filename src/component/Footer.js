@@ -3,7 +3,7 @@ import { LogoBottom } from "./Logo";
 const Footer = ({ margin }) => {
   return (
     <>
-      <div className="footer" style={{ marginTop: margin }}>
+      <div className="footer">
         <div className="buletKFooter"></div>
         <div className="homeBottom">
           <LogoBottom />

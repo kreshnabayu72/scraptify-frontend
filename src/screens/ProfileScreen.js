@@ -5,7 +5,7 @@ import Axios from "axios";
 // import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { LogoIPB2 } from "../component/Logo";
+import { LogoIPB } from "../component/Logo";
 
 export default function ProfileScreen() {
   const [name, setName] = useState("");
@@ -31,7 +31,14 @@ export default function ProfileScreen() {
   //   error: errorUpdate,
   //   loading: loadingUpdate,
   // } = userUpdateProfile;
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    name: "name",
+    email: "email",
+    noHandphone: 123,
+    nim: "G6123",
+    image: null,
+    seller: false,
+  });
   const [loadingUpload, setLoadingUpload] = useState(false);
   const [errorUpload, setErrorUpload] = useState("");
   const uploadFileHandler = async (e) => {
@@ -42,14 +49,6 @@ export default function ProfileScreen() {
 
   useEffect(() => {
     if (!user) {
-      setUser({
-        name: "name",
-        email: "email",
-        noHandphone: 123,
-        nim: "G6123",
-        image: null,
-        seller: false,
-      });
     } else {
       setName(user.name);
       setEmail(user.email);
@@ -72,7 +71,7 @@ export default function ProfileScreen() {
   return (
     <>
       <Navbar />
-      <LogoIPB2 />
+      <LogoIPB />
       <div className="profAccount">
         <h1 className="profilTitle">Pengaturan Akun</h1>
         <div>
@@ -106,7 +105,7 @@ export default function ProfileScreen() {
                   id="name"
                   type="text"
                   placeholder="Enter name"
-                  value={name}
+                  value={user.name}
                   onChange={(e) => {
                     if (isEditing) setName(e.target.value);
                   }}
@@ -161,21 +160,22 @@ export default function ProfileScreen() {
                   }}
                 ></input>
               </div>
-              {isEditing && (
-                <button className="profBtnSave" type="submit">
-                  <h1>Simpan Perubahan</h1>
-                </button>
-              )}
-              {!isEditing && (
-                <button
-                  className="profBtnSave"
-                  onClick={() => setIsEditing(true)}
-                >
-                  <h1>Edit Profil</h1>
-                </button>
-              )}
             </form>
           </div>
+          {isEditing && (
+            <button
+              className="profBtnSave"
+              type="submit"
+              onClick={(e) => setIsEditing(false)}
+            >
+              <h1>Simpan Perubahan</h1>
+            </button>
+          )}
+          {!isEditing && (
+            <button className="profBtnSave" onClick={() => setIsEditing(true)}>
+              <h1>Edit Profil</h1>
+            </button>
+          )}
         </div>
       </div>
       <Footer margin={"180px"} />

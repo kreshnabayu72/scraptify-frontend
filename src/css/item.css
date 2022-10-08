@@ -15,21 +15,22 @@ body {
   display: flex;
   text-align: left;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: 640px;
 }
 .detailTitle {
   color: #12465b;
-  margin-left: 6vw;
+  margin-left: 6%;
   font-size: 36px;
-  margin-bottom: 2vw;
+  margin-bottom: 2%;
 }
 .detailItem {
-  width: 88vw;
+  width: 89%;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  height: 60vw;
+  height: 100%;
+  min-height: 1000px;
   background-color: white;
   display: grid;
   grid-template-columns: 44.87% 55.13%;
@@ -44,9 +45,9 @@ body {
   justify-content: center;
 }
 .part1part {
-  width: 32vw;
-  height: 45vw;
-  margin-top: 4vh;
+  width: 80%;
+  height: 90%;
+  margin-top: 10%;
 }
 .mainPic {
   background-color: rgb(43, 46, 43);
@@ -55,15 +56,12 @@ body {
 }
 .sidePics {
   height: 25%;
-  margin-top: 4vh;
+  margin-top: 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.sidePic img {
-  width: 7vw;
-}
 .partDesc {
   display: grid;
   grid-template-rows: 13.84% 86.16%;
@@ -76,7 +74,7 @@ body {
   align-items: center;
 }
 .itemName h1 {
-  margin-left: 2vw;
+  margin-left: 5%;
   font-size: 38px;
 }
 .deskripsiDiv {
@@ -93,22 +91,22 @@ body {
 }
 .deskripsiDiv h4 {
   color: white;
-  margin-left: 2vw;
+  margin-left: 5%;
   font-size: 36px;
 }
 .deskripsiDiv2 h4 {
   color: white;
-  margin-left: 2vw;
+  margin-left: 5%;
   font-size: 36px;
 }
 .itemDescr h4 {
   font-size: 28px;
-  margin-left: 2vw;
-  margin-top: 1vw;
+  margin-left: 5%;
+  margin-top: 2%;
   margin-bottom: 20px;
 }
 .itemDescr p {
-  margin-left: 2vw;
+  margin-left: 2%;
   font-size: 21px;
 }
 .partSeller {
@@ -129,9 +127,11 @@ body {
   border-radius: 50%;
   width: 6vw;
   height: 6vw;
+  min-width: 75px;
+  min-height: 75px;
 }
 .div {
-  margin-left: 2vw;
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -170,20 +170,20 @@ body {
 }
 
 .itemComment {
-  margin-top: 55vh;
+  margin-top: 55%;
   margin-left: auto;
   margin-right: auto;
-  width: 88vw;
+  width: 88%;
 }
 .itemTitle {
   font-size: 36px;
-  margin-bottom: 2vw;
+  margin-bottom: 5%;
   color: #12465b;
 }
 .comments {
-  width: 88vw;
-  height: 28vw;
-  margin-left: 0.5vw;
+  width: 88%;
+  height: 28%;
+  margin-left: 0.5%;
 }
 .addComment {
   display: flex;
@@ -194,7 +194,7 @@ body {
 }
 .addComment input {
   height: 40px;
-  width: 80vw;
+  width: 80%;
   outline: none;
   border-radius: 10px;
   margin-left: 20px;
@@ -242,8 +242,8 @@ body {
   margin-top: 1000px;
 }
 .itemBottom {
-  width: 100vw;
-  height: 7vh;
+  width: 100%;
+  height: 7%;
   z-index: -99;
   background-color: #12465b;
   display: block;
@@ -253,8 +253,8 @@ body {
   position: absolute;
   width: 150px;
   height: 180px;
-  left: 90.2vw;
-  top: 210vh;
+  left: 90.2%;
+  top: 210%;
   z-index: -999;
   background: #f7be38;
   border-radius: 150px 0 0 0px;
@@ -325,5 +325,36 @@ body {
     justify-content: left;
     align-items: center;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .iconWA {
+    margin-top: 10px;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .iconWA p {
+    display: inline;
+    color: white;
+    font-size: 16px;
+  }
+  .profil {
+    display: flex;
+    flex-direction: column;
+  }
+  .partPrice p {
+    font-size: 24px;
+  }
+
+  .addToCart h4 {
+    font-size: 15px;
   }
 }
